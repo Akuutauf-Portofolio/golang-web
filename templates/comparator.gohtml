@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+</head>
+<body>
+    {% comment %} artinya ge adalah function lebih dari sama dengan (>=) {% endcomment %}
+    {% comment %} lalu .FinalValue adalah parameter pertama dan 80 adalah parameter kedua {% endcomment %}
+    
+    {% comment %} if {% endcomment %}
+    {{if ge .FinalValue 80}}
+        <h1>Good</h1>
+
+    {% comment %} else if {% endcomment %}
+    {{else if ge .FinalValue 60}}
+        <h1>Nice Try</h1>
+
+    {{else}}
+        <h1>Try Again</h1>
+    {{end}}
+</body>
+</html>

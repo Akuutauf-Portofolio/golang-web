@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+</head>
+<body>
+    {{/* with */}}
+    <h1>Name : {{ .Name }}</h1>
+    
+    {% comment %} dengan menggunakan with, jika ada datanya, maka akan langsung bisa mengakses attribute nya {% endcomment %}
+    {% comment %} data yang diberikan di with harus berupa struct/map nested {% endcomment %}
+    {{ with .Address }}
+    {% comment %} kalau sudah menerapkan with, maka kode dibawahnya akan dipanggil secara nested,-
+    sehingga kode diluar map/struct tidak akan bisa dipanggil, meskipun terdapat nama yang sama
+    {% endcomment %}
+    
+    {% comment %} bisa langsung memanggil nested struct nya (attribute) {% endcomment %}
+    <h1>Street : {{ .Street }}</h1>
+    <h1>Address : {{ .Address }}</h1>
+    <h1>City : {{ .City }}</h1>
+
+    {{else}}
+        <h1>Anda tidak punya Alamat</h1>
+    {{end}}
+</body>
+</html>

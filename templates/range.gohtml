@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+</head>
+<body>
+    {% comment %} range {% endcomment %}
+    
+    {{ range $index, $element := .Hobies }}
+        <h1>{{ $index }} - {{ $element }}</h1>
+    {{else}}
+        <h1>Anda tidak punya Hobi</h1>
+    {{end}}
+</body>
+</html>
